@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)http://kafecho.github.io/presentations/introduction-to-akka/#/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+
+		<title>Introduction to Actors and Akka</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Guillaume Belrose">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="http://kafecho.github.io/presentations/introduction-to-akka/css/reveal.min.css">
+		<link rel="stylesheet" href="http://kafecho.github.io/presentations/introduction-to-akka/css/theme/simple.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="http://kafecho.github.io/presentations/introduction-to-akka/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script><link rel="stylesheet" href="./Introduction to Actors and Akka_files/paper.css" type="text/css" media="print">
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body style="-webkit-transition: -webkit-transform 0.8s ease; transition: -webkit-transform 0.8s ease;">
+
+		<div class="reveal linear center" data-transition-speed="default" data-background-transition="default">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides" style="width: 960px; height: 700px; zoom: 0.9745714285714286;">
+
+				<section class="present" style="top: -171px; display: block;">
+					<h2>Actors and Akka</h2>
+					<h3>An introduction</h3>
+					<h4>Scala Jozi Meetup</h4>
+					<p>
+						<small>Guillaume Belrose / <a href="http://twitter.com/gbelrose" class="roll"><span data-title="@gbelrose">@gbelrose</span></a> / Quantel</small>
+					</p>
+				</section>
+
+				<section hidden="" class="future" style="top: -84px; display: block;">
+					<h2>Announcements</h2>
+				</section>
+
+
+				<section hidden="" class="future" style="top: -170.5px; display: block;">
+					<h2>Links</h2>
+					<ul>
+						<li>This presentation: http://kafecho.github.io/presentations/introduction-to-akka/</li>
+						<li>Code samples: https://github.com/kafecho/introduction-to-akka</li>
+				    </ul>
+				</section>
+
+
+				<section hidden="" class="future" style="top: -192px; display: block;">
+					<h2>Concurrency with Scala</h2>
+					<ul>
+						<li>Threads / locks</li>
+						<li>Scala Futures</li>
+						<li>Observables (Rx)</li>
+						<li>Software Transactional Memory</li>
+						<li>Actors</li>
+					</ul>
+				</section>
+
+				<section hidden="" class="future" style="top: -20px; display: none;">
+					<h2>Actors</h2>
+					<h3>Carl Hewitt 1973</h3>
+					<ul>
+						<li>Lightweight computational entities</li>
+						<li>Purely reactive</li>
+						<li>Communicate via async message passing</li>
+						<li>Made popular by Erlang</li>
+						<li>A form of Object Oriented Programming</li>
+					</ul>
+				</section>
+
+				<section hidden="" class="future" style="top: -20px; display: none;">
+					<h2>Reactive</h2>
+					<ul>
+						<li>Mailbox</li>
+						<li>Reply to messages</li>
+						<li>Spawn new actor</li>
+						<li>Change behaviour</li>
+					</ul>
+				</section>
+
+				<section hidden="" class="future" style="top: -20px; display: none;">
+					<h2>Akka</h2>
+					<ul>
+						<li>Toolkit for concurrent and distributed computing</li>
+						<li>JVM implementation of Actor model</li>
+						<li>Scala, Java API</li>
+						<li>Built-in fault tolerance</li>
+						<li>Scales up and out</li>
+					</ul>
+				</section>
+
+				<section hidden="" class="future" style="top: -20px; display: none;">
+					<h2>Some prerequisites</h2>
+					<ul>
+						<li>Case classes for lightweight immutable objects</li>
+						<li>Pattern matching for switching on messages</li>
+						<li>Symbol-like operators (!, ?)</li>
+					</ul>
+				</section>
+
+				<section hidden="" class="future" style="top: -20px; display: none;">
+					<h2>Example: Hello World</h2>
+				</section>
+
+				<section hidden="" class="future" style="top: -20px; display: none;">
+					<h2>Behind the scenes</h2>
+					<h3>Vastly simplified</h3>
+					<ul>
+						<li>Mailboxes (Queues)
+						</li><li>Dispatchers (thread pools)
+					    </li><li>Java Memory Model</li>
+					</ul>
+				</section>
+
+				<section hidden="" class="future" style="top: -20px; display: none;">
+					<h2>Key concepts</h2>
+					<ul>
+						<li>You don't call methods, you send messages</li>
+						<li>Isolated mutability approach to concurrency</li>
+						<li>All actors are hidden behind a reference</li>
+						<li>Location transparency</li>
+					    <li>Proxying, load balancing, etc...</li>
+					</ul>
+				</section>
+
+				<section hidden="" class="future" style="top: -20px; display: none;">
+					<h2>Example: Actors in Holywood</h2>
+				</section>
+
+				<section hidden="" class="future" style="top: -20px; display: none;">
+					<h2>Actor hierarchies</h2>
+					<ul>
+						<li>Actors can create children (and so on recursively)</li>
+						<li>Parents supervise ther children</li>
+						<li>All children may be equal (or not) in the face of errors </li>
+					</ul>
+				</section>
+
+				<section hidden="" class="future" style="top: -20px; display: none;">
+					<h2>Example: dodgy math</h2>
+				</section>
+
+				<section hidden="" class="future" style="top: -20px; display: none;">
+					<h2>Lifecycle and monitoring</h2>
+					<ul>
+						<li>preStart, postStop, preRestart, postRestart</li>
+						<li>Watching actors (deathwatch)</li>
+				    </ul>
+			    </section>
+
+				<section hidden="" class="future" style="top: -20px; display: none;">
+					<h2>Example: The Terminator</h2>
+				</section>
+
+				<section hidden="" class="future" style="top: -20px; display: none;">
+					<h2>Become / Unbecome</h2>
+					<ul>
+						<li>Change the react loop</li>
+						<li>Useful for modellling state &amp; state machines</li>
+						<li>See also stashing, FSM</li>
+						<li>Useful for implementing protocol state</li>
+					<ul>
+				</ul></ul></section>
+
+				<section hidden="" class="future" style="top: -20px; display: none;">
+					<h2>Example: The Incredible Hulk</h2>
+				</section>
+
+				<section hidden="" class="future" style="top: -20px; display: none;">
+					<h2>Distributing Actors</h2>
+					<ul>
+						<li>Interact with remote actors</li>
+						<li>Deploy actors on remote systems</li>
+						<li>See also: clustering</li>
+					</ul>
+				</section>
+
+				<section hidden="" class="future" style="top: -20px; display: none;">
+					<h2>Example: distributed ping</h2>
+				</section>
+
+				<section hidden="" class="future" style="top: -20px; display: none;">
+					<h2>What I use Akka for</h2>
+					<h3>Scala Actors for Media Processing</h3>
+					<ul>
+						<li>Large scale PVR</li>
+						<li>Near-live video editing</li>
+						<li>Re-streaming</li>
+						<li>Video archiving</li>
+						<li>High bit-rate feeds</li>
+					</ul>
+				</section>
+
+				<section hidden="" class="future" style="top: -20px; display: none;">
+					<h2>High level picture</h2>
+					<ul>
+						<li>Pipeline of single-purpose media processing actors</li>
+					    <li>Messages flow from actors to actors
+					    	<ul>
+					    		<li>UDP packets, RTP packets</li>
+					    		<li>Timecode, closed caption</li>
+					    		<li>Audio and video frames</li>
+					    	</ul>
+					    </li>
+					</ul>
+				</section>
+
+				<section hidden="" class="future" style="top: -20px; display: none;">
+					<h2>A lot more</h2>
+					<ul>
+						<li>Using Actors with futures</li>
+						<li>Low level IO with Akka-io</li>
+						<li>Async HTTP REST Web Services with Spray</li>
+					</ul>
+				</section>
+
+				<section hidden="" class="future" style="top: -20px; display: none;">
+					<h2>Pros</h2>
+					<ul>
+						<li>Scales very well up and out</li>
+						<li>Fits well with messaging oriented domain</li>
+						<li>Async/non blocking can be quite efficient</li>
+					</ul>
+				</section>
+
+				<section hidden="" class="future" style="top: -149px; display: block;">
+					<h2>Cons</h2>
+					<ul>
+						<li>Lack of type safety</li>
+						<li>Actor hammer / concurrency nail</li>
+						<li>Async can be difficult to reason about</li>
+					</ul>
+				</section>
+
+				<section hidden="" class="future" style="top: -127px; display: block;">
+					<h2>Find out more</h2>
+					<ul>
+						<li><a href="https://class.coursera.org/reactive-001/class/index" class="roll"><span data-title="Principles of Reactive Programming (Coursera)">Principles of Reactive Programming (Coursera)</span></a></li>
+						<li>Books...</li>
+					</ul>
+				</section>
+
+				<section hidden="" class="future" style="top: -84px; display: block;">
+					<h2>Thank you!!!</h2>
+				</section>
+
+			</div>
+
+		<div class="backgrounds"><div class="slide-background present"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div></div><div class="progress" style="display: block;"><span style="width: 0px;"></span></div><aside class="controls" style="display: block;"><div class="navigate-left"></div><div class="navigate-right enabled"></div><div class="navigate-up"></div><div class="navigate-down"></div></aside><div class="state-background"></div><div class="pause-overlay"></div></div>
+
+		<script src="./Introduction to Actors and Akka_files/head.min.js"></script>
+		<script src="./Introduction to Actors and Akka_files/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script><script type="text/javascript" src="./Introduction to Actors and Akka_files/highlight.js"></script><script type="text/javascript" src="./Introduction to Actors and Akka_files/zoom.js"></script><script type="text/javascript" src="./Introduction to Actors and Akka_files/notes.js"></script>
+
+	
+
+</body></html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)http://kafecho.github.io/presentations/introduction-to-akka/#/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+
+		<title>Introduction to Datomic and Scala</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Andre Richards">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="http://kafecho.github.io/presentations/introduction-to-akka/css/reveal.min.css">
+		<link rel="stylesheet" href="http://kafecho.github.io/presentations/introduction-to-akka/css/theme/simple.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="http://kafecho.github.io/presentations/introduction-to-akka/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script><link rel="stylesheet" href="./js/paper.css" type="text/css" media="print">
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body style="-webkit-transition: -webkit-transform 0.8s ease; transition: -webkit-transform 0.8s ease;">
+
+		<div class="reveal linear center" data-transition-speed="default" data-background-transition="default">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides" style="width: 960px; height: 700px; zoom: 0.9745714285714286;">
+
+				<section class="present" style="top: -171px; display: block;">
+					<h2>Datomic and Scala</h2>
+					<h3>An introduction</h3>
+					<h4>Scala Jozi Meetup</h4>
+					<p>
+						<small>Andre Richards / <a href="https://plus.google.com/+AndreRichards" class="roll"><span data-title="+AndreRichards">+AndreRichards</span></a> / <a href="https://www.hti-systems.co.za" class="roll"><span data-title="HTI">HTI</span></a></small>
+					</p>
+				</section>
+
+				<section hidden="" class="future" style="top: -84px; display: block;">
+					<h2>Announcements</h2>
+				</section>
+
+
+				<section hidden="" class="future" style="top: -170.5px; display: block;">
+					<h2>Links</h2>
+					<ul>
+						<li>This presentation: http://andrerichards.github.io/presentations/datomic-scala/</li>
+						<li>Code samples: https://github.com/andrerichards/datomic-scala</li>
+				    </ul>
+				</section>
+
+
+				<section hidden="" class="future" style="top: -20px; display: none;">
+					<h2>Some prerequisites</h2>
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</section>
+
+				<section hidden="" class="future" style="top: -20px; display: none;">
+					<h2>Example: </h2>
+				</section>
+
+				<section hidden="" class="future" style="top: -20px; display: none;">
+					<h2>Key concepts</h2>
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					    <li></li>
+					</ul>
+				</section>
+
+				<section hidden="" class="future" style="top: -20px; display: none;">
+					<h2>Example: </h2>
+				</section>
+
+				<section hidden="" class="future" style="top: -20px; display: none;">
+					<h2>Pros</h2>
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</section>
+
+				<section hidden="" class="future" style="top: -149px; display: block;">
+					<h2>Cons</h2>
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</section>
+
+				<section hidden="" class="future" style="top: -127px; display: block;">
+					<h2>Find out more</h2>
+					<ul>
+						<li><a href="http://www.datomic.com/" class="roll"><span data-title="www.datomic.com">www.datomic.com</span></a></li>
+						<li>Books...</li>
+					</ul>
+				</section>
+
+				<section hidden="" class="future" style="top: -84px; display: block;">
+					<h2>Thank you!!!</h2>
+				</section>
+
+			</div>
+
+		<div class="backgrounds"><div class="slide-background present"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div></div><div class="progress" style="display: block;"><span style="width: 0px;"></span></div><aside class="controls" style="display: block;"><div class="navigate-left"></div><div class="navigate-right enabled"></div><div class="navigate-up"></div><div class="navigate-down"></div></aside><div class="state-background"></div><div class="pause-overlay"></div></div>
+
+		<script src="./js/head.min.js"></script>
+		<script src="./js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script><script type="text/javascript" src="./js/highlight.js"></script><script type="text/javascript" src="./js/zoom.js"></script><script type="text/javascript" src="./js/notes.js"></script>
+
+	
+
+</body></html>
